@@ -18,7 +18,7 @@ recognition.grammars = speechRecognitionList
 recognition.continuous = false
 recognition.lang = "en-US"
 recognition.interimResults = false
-recognition.maxAlternatives = 1
+recognition.maxAlternatives = 50
 
 const diagnostic = document.querySelector(".output")
 const hints = document.querySelector(".hints")
@@ -30,6 +30,7 @@ document.body.onclick = () => {
 
 recognition.onresult = (event) => {
   const name = event.results[0][0].transcript
+  console.log(event.results[0])
   diagnostic.textContent = `Result received: ${name}.`
   console.log(`Confidence: ${event.results[0][0].confidence}`)
 }
