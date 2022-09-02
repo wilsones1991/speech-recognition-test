@@ -3,7 +3,7 @@ const SpeechGrammarList = window.SpeechGrammarList || webkitSpeechGrammarList
 const SpeechRecognitionEvent =
   window.SpeechRecognitionEvent || webkitSpeechRecognitionEvent
 
-const names = ["Ariana", "Krylle", "Bobby", "Adam", "Anthony"]
+const names = ["Ariana", "Krylle", "Bobby", "Adam", "Anthony", "Yurika"]
 
 const grammar = `#JSGF V1.0; grammar names; public <name> = ${names.join(
   " | "
@@ -30,7 +30,7 @@ document.body.onclick = () => {
 
 recognition.onresult = (event) => {
   const name = event.results[0][0].transcript
-  console.log("Test", event.results[0])
+  console.log("Test", event.results)
   diagnostic.textContent = `Result received: ${name}.`
   console.log(`Confidence: ${event.results[0][0].confidence}`)
 }
