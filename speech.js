@@ -30,7 +30,7 @@ document.body.onclick = () => {
 
 recognition.onresult = (event) => {
   const name = event.results[0][0].transcript
-  console.log(event.results[0])
+  console.log("Test", event.results[0])
   diagnostic.textContent = `Result received: ${name}.`
   console.log(`Confidence: ${event.results[0][0].confidence}`)
 }
